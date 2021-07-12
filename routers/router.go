@@ -1,7 +1,7 @@
 package routers
 
 import (
-	"github.com/astaxie/beego"
+	beego "github.com/beego/beego/v2/adapter"
 	"github.com/yinrenxin/hgoj/controllers"
 )
 
@@ -14,5 +14,6 @@ func init() {
 	beego.Include(&controllers.SolutionController{})
 	beego.Include(&controllers.ContestController{})
 	beego.Include(&controllers.BlogController{})
+	beego.Router("/friend", &controllers.FriendController{})
 
 }

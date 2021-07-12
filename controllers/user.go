@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/astaxie/beego/logs"
+	"github.com/beego/beego/v2/adapter/logs"
 	"github.com/yinrenxin/hgoj/models"
 	"github.com/yinrenxin/hgoj/syserror"
 	//"github.com/yinrenxin/hgoj/syserror"
@@ -160,6 +160,7 @@ func (this *UserController) UserReg() {
 
 	//保存用户信息
 	uid, err := models.SaveUser(username, nick, email, pwd, school, Ip)
+
 	if err != nil {
 		this.JsonErr("注册失败", 112, "/reg")
 	}
